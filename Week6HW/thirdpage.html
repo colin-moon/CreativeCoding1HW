@@ -1,18 +1,34 @@
 <html>
-    <title>Third Page</title>
-    <head></head>
+    <title>Your Favorite Film</title>
+    <head>
+        <script>
+            function getData(){
+                var name = document.getElementById("txtFilm").value;
+                var name = document.getElementById("txtGenre").value;
+
+                window.alert("Film: " + Film + "Genre: " + Genre);
+            }
+        </script>
+    </head>
     <body>
     What is your favorite film and favorite genre?
     <br>
     <br>
     <form>
-        Favorite Film: <input type="text"><br>
-        <br>
-        Favorite Genre: <input type="text"><br>
-        <button type="button">Submit</button><br>
-        <br>
-        <a href="index.html">Home</a>
-
+        <table>
+            <tr>
+                <td>Favorite Film:</td>
+                <td><input type="text" id="txtFilm"></td>
+            </tr>
+            <tr>
+                <td>Favorite Genre:</td>
+                <td><input type="text" id="txtGenre"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="btnsubmit" onClick="getData();">Submit</button> </td>
+            </tr>
+        </table>
+        <a href="index.html">Home</a>  
     </form>
     </body>
-    </html>
+</html>

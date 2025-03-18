@@ -1,0 +1,63 @@
+<html>
+  <title>Contact Us</title>
+  <head>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email"><br><br>
+      <button type="submit">Submit</button>
+    </form>
+    
+    <style>
+      .error {
+        border: 2px solid red;
+      }
+    </style>
+
+    <script>
+      const form = document.querySelector('#myForm');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const nameInput = document.querySelector('#name');
+        const emailInput = document.querySelector('#email');
+        const name = nameInput.value;
+        const email = emailInput.value;
+        
+        // Reset error styles
+        nameInput.classList.remove('error');
+        emailInput.classList.remove('error');
+
+        let isValid = true;
+
+        // Name validation
+        if (name === '') {
+          alert('Name is required');
+          nameInput.classList.add('error');
+          isValid = false;
+        }
+
+        // Email validation
+        if (email !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          alert('Invalid email format');
+          emailInput.classList.add('error');
+          isValid = false;
+        }
+
+        if (email === '') {
+          alert('Email is required');
+          emailInput.classList.add('error');
+          isValid = false;
+        }
+
+        if (isValid) {
+          alert('Form submitted successfully');
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a href="index.html">Home</a>
+  </body>
+</html>
