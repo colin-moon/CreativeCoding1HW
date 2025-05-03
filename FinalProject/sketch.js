@@ -173,16 +173,16 @@ function playerCreate() {
 
 function playerMovement() {
   if (keyIsDown(w)) {
-    playerY -= 2;
+    playerY -= 3;
   }
   if (keyIsDown(s)) {
-    playerY += 2;
+    playerY += 3;
   }
   if (keyIsDown(a)) {
-    playerX -= 2;
+    playerX -= 3;
   }
   if (keyIsDown(d)) {
-    playerX += 2;
+    playerX += 3;
   }
 }
 
